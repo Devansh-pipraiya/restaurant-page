@@ -1,2 +1,5 @@
 import { home } from "./home.js";
-home();
+import { menu } from "./menu.js";
+
+// home();
+menu();
