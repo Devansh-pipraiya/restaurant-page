@@ -1,4 +1,2 @@
-console.log("webpack start");
-
-import { pageload } from "./page-load.js";
-pageload();
+import { home } from "./home.js";
+home();
