@@ -1,0 +1,135 @@
+
+/* ==========================================
+                    RESET
+   ========================================== */
+
+/* Custom Reset based on Josh Comeau */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+
+/* ==========================================
+                    VARIABLES
+   ========================================== */
+
+/* @font-face {
+  font-family: "custom-font";
+  src: url("../assets/custom-font.woff2") format("woff2");
+} */
+
+:root {
+  --font-system: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Surfaces & Backgrounds */
+  --clr-bg: #0d0f14;
+  --clr-surface: #161922;
+  --clr-surface-hover: #1f2330;
+
+  /* Brand Accents */
+  --clr-primary: #ff3838;
+  --clr-primary-hover: #ff5252;
+  --clr-accent: #ffaa00;
+  --clr-accent-hover: #ffbe33;
+
+  /* Typography */
+  --clr-text: #f5f6fa;
+  --clr-text-light: #9ca3af;
+  --clr-text-muted: #6b7280;
+
+  /* Borders & Dividers */
+  --clr-border: #252a37;
+  --clr-border-focus: #373e52;
+
+  /* Dark Grays for utility / containers */
+  --clr-gray-100: #1b1e28;
+  --clr-gray-300: #2d3342;
+
+  /* Shadows & Glows */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 16px rgba(255, 56, 56, 0.35);
+  --shadow-glow-accent: 0 0 16px rgba(255, 170, 0, 0.35);
+}
+
+/* ==========================================
+                    BASE STYLES
+   ========================================== */
+
+::selection {
+  background-color: var(--clr-primary);
+  color: #ffffff;
+}
+
+body {
+  font-family: var(--font-system);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  min-height: 100vh;
+}
+
+
+/* ==========================================
+                    FOOTER
+   ========================================== */
+
+footer > .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 9px 0;
+  font-size: 1rem;
+  color: var(--clr-text-light);
+}
+footer .github-logo {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s ease-in-out, fill 0.2s ease-in-out;
+  fill: var(--clr-text);
+}
+footer .github-logo:hover {
+  transform: rotate(360deg) scale(1.2);
+  fill: var(--clr-primary);
+}

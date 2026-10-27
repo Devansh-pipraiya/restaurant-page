@@ -1,5 +1,8 @@
 import { insertElem, insertImage, insertList } from "./dom.js";
-import burgerImg from "./assets/the-existential-crisis-burger.jpg";
+import burgerImg from "./assets/burger-icon.jpg";
+import friesImg from "./assets/fries-icon.jpg";
+import pizzaImg from "./assets/pizza-icon.jpg";
+import shakeImg from "./assets/shake-icon.jpg";
 
 export { menu };
 
@@ -20,35 +23,35 @@ function menu() {
     "A juicy burger stacked with cheese, regret, and a sauce made from questionable life decisions.",
     "₹199",
     burgerImg,
-    640,
-    485,
+    512,
+    512,
   );
 
   createMenuItem(
     "Procrastination Fries",
     "Golden, crispy fries. Best enjoyed while putting off something important.",
     "₹99",
-    burgerImg,
-    640,
-    485,
+    friesImg,
+    512,
+    512,
   );
 
   createMenuItem(
     "Deadline Destroyer Pizza",
     "A cheesy pizza that gives you the strength to ignore your responsibilities for another hour.",
     "₹299",
-    burgerImg,
-    640,
-    485,
+    pizzaImg,
+    512,
+    512,
   );
 
   createMenuItem(
     "Emotional Support Shake",
     "A thick chocolate milkshake. Cheaper than therapy, but not a replacement.",
     "₹129",
-    burgerImg,
-    640,
-    485,
+    shakeImg,
+    512,
+    512,
   );
 
   insertElem("p", "Eat now, overthink later.");

@@ -1,12 +1,12 @@
 import { insertElem, insertImage, insertList } from "./dom.js";
-import burgerImg from "./assets/the-existential-crisis-burger.jpg";
+import aboutImg from "./assets/about-img.jpg";
 
 export { about };
 
 function about() {
   insertElem("h2", "Our Story");
 
-  insertImage(burgerImg, "the existential crisis burger", 640, 485);
+  insertImage(aboutImg, "the existential crisis burger", 836, 470);
 
   insertElem(
     "p",
