@@ -22,13 +22,7 @@ function home() {
 
   const imgWrapper = document.createElement("div");
   imgWrapper.classList.add("special-img-wrapper");
-  const burger = insertImage(
-    burgerImg,
-    "the existential crisis burger",
-    640,
-    485,
-    imgWrapper,
-  );
+  const burger = insertImage(burgerImg, "the existential crisis burger", 640, 485, imgWrapper);
   burger.classList.add("special-img");
   div2.appendChild(imgWrapper);
 
@@ -50,11 +44,7 @@ function home() {
   pricing.classList.add("special-pricing");
   const priceVal = insertElem("span", "₹199", pricing);
   priceVal.classList.add("price-val");
-  const priceNote = insertElem(
-    "span",
-    "Your financial problems can wait.",
-    pricing,
-  );
+  const priceNote = insertElem("span", "Your financial problems can wait.", pricing);
   priceNote.classList.add("price-note");
   info.appendChild(pricing);
 
@@ -63,7 +53,7 @@ function home() {
 
   const div3 = document.createElement("div");
   div3.classList.add("list-div");
-  insertElem("h2", "Why Choose Us?", div3);
+  insertElem("h2", "👉 Why Choose Us?", div3);
   insertList(
     [
       "🍟 Fries that understand you better than your friends.",
