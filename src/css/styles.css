@@ -106,6 +106,251 @@ body {
   background-color: var(--clr-bg);
   color: var(--clr-text);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+                    HEADER
+   ========================================== */
+
+header {
+  background-color: var(--clr-surface);
+  color: var(--clr-text);
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-card);
+}
+
+header > nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-card);
+}
+
+header > nav > h1 {
+  flex: 0 0 100%; 
+  text-align: center;
+}
+
+header > nav > button {
+  background-color: var(--clr-surface);
+  color: var(--clr-text);
+  padding: 16px;
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+header > nav > button:hover {
+  background-color: var(--clr-surface-hover);
+  color: var(--clr-primary);
+}
+
+/* ==========================================
+                    CONTENT
+   ========================================== */
+
+#content {
+  flex-grow: 1;
+  width: min(880px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 32px 24px;
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 8px 12px 16px;
+}
+
+.intro h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--clr-text);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.intro p {
+  font-size: 1.05rem;
+  color: var(--clr-text-light);
+  line-height: 1.6;
+  max-width: 74ch;
+  text-wrap: pretty;
+}
+
+.intro::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+  border-radius: 999px;
+  margin-top: 6px;
+  box-shadow: var(--shadow-glow);
+}
+
+/* ==========================================
+               TODAY'S SPECIAL
+   ========================================== */
+
+.special {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: linear-gradient(145deg, var(--clr-surface), #1a1e2b);
+  border: 1px solid var(--clr-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 680px) {
+  .special {
+    grid-template-columns: 1fr 1.15fr;
+  }
+}
+
+.special:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 170, 0, 0.4);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 170, 0, 0.12);
+}
+
+.special-img-wrapper {
+  overflow: hidden;
+  position: relative;
+  min-height: 240px;
+  background-color: #08090d;
+}
+
+.special-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.special:hover .special-img {
+  transform: scale(1.04);
+}
+
+.special-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 24px;
+  gap: 12px;
+}
+
+.special-badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 56, 56, 0.12);
+  color: var(--clr-primary);
+  border: 1px solid rgba(255, 56, 56, 0.3);
+}
+
+.special-info h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--clr-text);
+  line-height: 1.25;
+}
+
+.special-desc {
+  font-size: 0.98rem;
+  color: var(--clr-text-light);
+  line-height: 1.6;
+}
+
+.special-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+}
+
+.price-val {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--clr-accent);
+  letter-spacing: -0.02em;
+}
+
+.price-note {
+  font-size: 0.88rem;
+  color: var(--clr-text-light);
+  font-style: italic;
+}
+
+/* ==========================================
+               WHY CHOOSE US LIST
+   ========================================== */
+
+.list-div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list-div h2 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--clr-text);
+  letter-spacing: -0.01em;
+}
+
+.list-div ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.list-div li {
+  background-color: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: var(--clr-text);
+  line-height: 1.5;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.list-div li:hover {
+  border-color: var(--clr-border-focus);
+  transform: translateX(4px);
 }
 
 
